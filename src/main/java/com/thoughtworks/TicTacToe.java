@@ -14,6 +14,7 @@ public class TicTacToe {
 
     public void play() {
         board.setUp();
+        printStream.println("Enter a number between 1 and 9");
 
     }
 
