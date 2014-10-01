@@ -4,20 +4,16 @@ import java.io.PrintStream;
 
 public class TicTacToe {
     private static PrintStream printStream;
+    private Board board;
+
 
     public TicTacToe(PrintStream printstream){
         this.printStream = printstream;
+        board = new Board(printStream);
     }
 
-    public static void play() {
-        String verticalLines = "  | |  ";
-        String horizontalLine = "-------";
-
-        printStream.println(verticalLines);
-        printStream.println(horizontalLine);
-        printStream.println(verticalLines);
-        printStream.println(horizontalLine);
-        printStream.println(verticalLines);
+    public void play() {
+        board.setUp();
 
     }
 
