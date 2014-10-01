@@ -14,10 +14,11 @@ public class TicTacToe {
         String horizontalLine = "-------";
 
         printStream.println(verticalLines);
-        printStream.println(verticalLines);
+        printStream.println(horizontalLine);
         printStream.println(verticalLines);
         printStream.println(horizontalLine);
-        printStream.println(horizontalLine);
+        printStream.println(verticalLines);
+
     }
 
 

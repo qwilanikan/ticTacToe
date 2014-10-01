@@ -2,6 +2,7 @@ package com.thoughtworks;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InOrder;
 
 import java.io.PrintStream;
 
@@ -15,7 +16,6 @@ public class TestTicTacToe {
     public void setUp(){
         printStream = mock(PrintStream.class);
         ticTacToe = new TicTacToe(printStream);
-
     }
 
     @Test
@@ -25,8 +25,13 @@ public class TestTicTacToe {
 
         ticTacToe.play();
 
-        verify(printStream, times(3)).println(verticalLines);
-        verify(printStream, times(2)).println(horizontalLine);
+        InOrder inOrder = inOrder(printStream);
+
+        inOrder.verify(printStream).println(verticalLines);
+        inOrder.verify(printStream).println(horizontalLine);
+        inOrder.verify(printStream).println(verticalLines);
+        inOrder.verify(printStream).println(horizontalLine);
+        inOrder.verify(printStream).println(verticalLines);
     }
 
 }
