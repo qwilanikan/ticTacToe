@@ -31,27 +31,25 @@ public class Board {
     public void markX() throws IOException {
         int xLocation = Integer.parseInt(bufferedReader.readLine());
 
-//        System.out.println("greater than 0");
-//        String lineToChange = lineOne;
-//        if (xLocation > 3){
-//            System.out.println("greater than 3");
-//            lineToChange = lineThree;
-//        }
-//        else if (xLocation > 6){
-//            lineToChange = lineFive;
-//            System.out.println("greater than 6");
-//        }
-//
-//        int locationOnLine = xLocation % 3;
-//        if (locationOnLine == 2) {
-//            lineToChange = " X |   |   ";
-//        }
-//        else if(locationOnLine == 1) {
-//            lineToChange = "   | X |   ";
-//        }
-//        else {
-//            lineToChange = "   |   | X ";
-//        }
+        String lineToChange = lineOne;
+        if (xLocation > 3){
+            lineToChange = lineThree;
+        }
+        if (xLocation > 6){
+            lineToChange = lineFive;
+        }
+
+        int locationOnLine = xLocation % 3;
+        System.out.println(locationOnLine);
+        if (locationOnLine == 2) {
+            lineToChange = "   | X |   ";
+        }
+        else if(locationOnLine == 1) {
+            lineToChange = " X |   |   ";
+        }
+        else {
+            lineToChange = "   |   | X ";
+        }
 
         //s = s.replace(s.substring(3,6), "foobar");
 

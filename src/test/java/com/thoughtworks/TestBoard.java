@@ -42,11 +42,11 @@ public class TestBoard {
         inOrder.verify(printStream).println(verticalLines);
     }
 
-//    @Test
-//    public void shouldMarkXWherePlayerOneChooses() throws IOException {
-//        when(bufferedReader.readLine()).thenReturn("2");
-//        board.markX();
-//        verify(printStream).println("   | X |   ");
-//    }
+    @Test
+    public void shouldMarkXWherePlayerOneChooses() throws IOException {
+        when(bufferedReader.readLine()).thenReturn("2");
+        board.markX();
+        verify(printStream).println("   | X |   ");
+    }
 }
 
