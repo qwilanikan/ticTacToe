@@ -11,8 +11,9 @@ public class Main {
         PrintStream out = System.out;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Board board = new Board(out);
-        Player player = new Player(reader, board);
-        TicTacToe ticTacToe = new TicTacToe(out, reader, board, player);
+        Player player1 = new Player(reader, board);
+        Player player2 = new Player(reader, board);
+        TicTacToe ticTacToe = new TicTacToe(out, reader, board, player1, player2);
         ticTacToe.play();
     }
 

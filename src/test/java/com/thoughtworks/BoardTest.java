@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
@@ -22,7 +23,8 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldDrawEmptyBoardCorrectly(){
+    public void shouldDrawBoardCorrectly(){
+
         String boardImage =     "   |   |   \n" +
                                 "-----------\n" +
                                 "   |   |   \n" +

@@ -8,20 +8,24 @@ public class TicTacToe {
     private static PrintStream printStream;
     private BufferedReader bufferedReader;
     private Board board;
-    private Player player;
+    private Player player1;
+    private Player player2;
 
 
-    public TicTacToe(PrintStream printStream, BufferedReader bufferedReader, Board board, Player player) {
+
+    public TicTacToe(PrintStream printStream, BufferedReader bufferedReader, Board board, Player player1, Player player2) {
         this.printStream = printStream;
         this.bufferedReader = bufferedReader;
         this.board = board;
-        this.player = player;
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
     public void play() throws IOException {
-        printStream.println("Enter a number between 1 and 9");
-        player.move();
-
+        printStream.println("Player 1 Enter a number between 1 and 9");
+        player1.move();
+        printStream.println("Player 2 enter a number between 1 and 9");
+        player2.move();
     }
 
 

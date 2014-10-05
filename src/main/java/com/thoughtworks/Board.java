@@ -13,9 +13,9 @@ public class Board {
 
     public Board(PrintStream printStream){
         this.printStream = printStream;
-        locations = new ArrayList<String>();
+        this.locations = new ArrayList<String>();
         for (int i = 0; i < 9; i++) {
-            locations.add(" ");
+            this.locations.add(" ");
         }
     }
 

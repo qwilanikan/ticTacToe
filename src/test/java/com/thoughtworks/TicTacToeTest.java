@@ -2,6 +2,7 @@ package com.thoughtworks;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InOrder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,15 +15,17 @@ public class TicTacToeTest {
     TicTacToe ticTacToe;
     BufferedReader bufferedReader;
     private Board board;
-    private Player player;
+    private Player player1;
+    private Player player2;
 
     @Before
     public void setUp(){
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
         board = mock(Board.class);
-        player = mock(Player.class);
-        ticTacToe = new TicTacToe(printStream, bufferedReader,board, player);
+        player1 = mock(Player.class);
+        player2 = mock(Player.class);
+        ticTacToe = new TicTacToe(printStream, bufferedReader,board, player1, player2);
     }
 
     @Test
@@ -32,19 +35,20 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void shouldDrawBoard() throws IOException {
+    public void shouldCallMove() throws IOException {
         ticTacToe.play();
-
-        verify(board).draw();
-
+        verify(player1).move();
     }
 
+    @Test
+    public void shouldPerformActionsInCorrectOrder() throws IOException {
+        ticTacToe.play();
 
-//
-//    Make a move
-//    Prompt player 1 to enter a number between 1 and 9 to
-//    indicate where they wish to move. Redraw the board with an ‘X’ in
-//    that location. It doesn’t matter what happens if they enter anything
-//    besides a number from 1 to 9.
+        InOrder inOrder = inOrder(player1, player2);
+
+        inOrder.verify(player1).move();
+        inOrder.verify(player2).move();
+    }
+
 
 }
