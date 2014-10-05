@@ -37,7 +37,7 @@ public class TicTacToeTest {
     @Test
     public void shouldCallMove() throws IOException {
         ticTacToe.play();
-        verify(player1).move();
+        verify(player1).move("X");
     }
 
     @Test
@@ -46,8 +46,8 @@ public class TicTacToeTest {
 
         InOrder inOrder = inOrder(player1, player2);
 
-        inOrder.verify(player1).move();
-        inOrder.verify(player2).move();
+        inOrder.verify(player1).move("X");
+        inOrder.verify(player2).move("X");
     }
 
 

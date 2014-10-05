@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
@@ -38,7 +37,7 @@ public class BoardTest {
 
     @Test
     public void shouldMarkXInFirstSpotWhen1Chosen(){
-        board.mark(1);
+        board.mark(1, "X");
 
         verify(printStream).println(" X |   |   \n" +
                                     "-----------\n" +
@@ -50,7 +49,7 @@ public class BoardTest {
 
     @Test
     public void shouldMarkXInMiddleSpotWhen5Chosen(){
-        board.mark(5);
+        board.mark(5, "X");
 
         verify(printStream).println("   |   |   \n" +
                                     "-----------\n" +
@@ -62,13 +61,26 @@ public class BoardTest {
 
     @Test
     public void shouldNotMarkBoardWhenChoiceIsNotValid(){
-        board.mark(90);
+        board.mark(90, "X");
 
         verify(printStream).println("   |   |   \n" +
                                     "-----------\n" +
                                     "   |   |   \n" +
                                     "-----------\n" +
                                     "   |   |   \n");
+    }
+
+    @Test
+    public void shouldMarkDifferentXAndY(){
+        board.mark(1, "X");
+        board.mark(3, "Y");
+
+        verify(printStream).println(" X |   | Y \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n");
+
     }
 }
 

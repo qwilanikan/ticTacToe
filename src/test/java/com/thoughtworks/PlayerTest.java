@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class PlayerTest {
@@ -25,15 +24,15 @@ public class PlayerTest {
     @Test
     public void shouldMark5WhenPlayerChooses5() throws IOException {
         when(bufferedReader.readLine()).thenReturn("5");
-        player.move();
-        verify(board).mark(5);
+        player.move("X");
+        verify(board).mark(5, "X");
     }
 
     @Test
     public void shouldMark1WhenPlayerChooses1() throws IOException {
         when(bufferedReader.readLine()).thenReturn("1");
-        player.move();
-        verify(board).mark(1);
+        player.move("X");
+        verify(board).mark(1, "X");
 
 
     }

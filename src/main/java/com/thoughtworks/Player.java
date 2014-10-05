@@ -12,8 +12,8 @@ public class Player {
         this.board = board;
     }
 
-    public void move() throws IOException {
+    public void move(String mark) throws IOException {
         int choice = Integer.parseInt(bufferedReader.readLine());
-        board.mark(choice);
+        board.mark(choice, mark);
     }
 }

@@ -20,9 +20,9 @@ public class Board {
     }
 
 
-    public void mark(int location) {
+    public void mark(int location, String mark) {
         if (location < 10 && location > 0) {
-            locations.set(location - 1, "X");
+            locations.set(location - 1, mark);
         }
         draw();
     }
