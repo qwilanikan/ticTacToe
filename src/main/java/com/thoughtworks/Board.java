@@ -4,23 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
-/**
- * Created by qwillduvall on 10/1/14.
- */
 public class Board {
 
     private final PrintStream printStream;
-    private BufferedReader bufferedReader;
 
-    public Board(PrintStream printStream, BufferedReader bufferedReader){
+    public Board(PrintStream printStream){
         this.printStream = printStream;
-        this.bufferedReader = bufferedReader;
+
 
     }
 
 
-    public void mark() throws IOException {
-        int xLocation = Integer.parseInt(bufferedReader.readLine());
+    public void mark(int i) {
+        int xLocation;
 
 
 

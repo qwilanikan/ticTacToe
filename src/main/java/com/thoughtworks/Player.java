@@ -1,9 +1,15 @@
 package com.thoughtworks;
 
-/**
- * Created by qwillduvall on 10/5/14.
- */
+import java.io.IOException;
+
 public class Player {
-    public void move(int i) {
+    private Board board;
+
+    public Player(Board board) {
+        this.board = board;
+    }
+
+    public void move() {
+        board.mark(5);
     }
 }

@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.PrintStream;
 
 import static org.mockito.Mockito.*;
@@ -18,7 +17,7 @@ public class BoardTest {
     @Before
     public void setUp(){
         printStream = mock(PrintStream.class);
-        board = new Board(printStream, bufferedReader);
+        board = new Board(printStream);
     }
 
     @Test
@@ -35,7 +34,7 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldMarkXWherePlayerOneChooses() throws IOException {
+    public void shouldMarkXWherePlayerOneChooses(){
 
     }
 }
