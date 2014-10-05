@@ -6,29 +6,32 @@ import java.io.PrintStream;
 
 public class Board {
 
-    private final PrintStream printStream;
+    private PrintStream printStream;
+    private String boardString;
 
     public Board(PrintStream printStream){
         this.printStream = printStream;
+        boardString =   "   |   |   \n" +
+                        "-----------\n" +
+                        "   |   |   \n" +
+                        "-----------\n" +
+                        "   |   |   \n";
 
 
     }
 
 
     public void mark(int i) {
-        int xLocation;
-
-
-
-
+        boardString =   " X |   |   \n" +
+                        "-----------\n" +
+                        "   |   |   \n" +
+                        "-----------\n" +
+                        "   |   |   \n";
+        draw();
     }
 
     public void draw() {
-        printStream.println("   |   |   \n" +
-                            "-----------\n" +
-                            "   |   |   \n" +
-                            "-----------\n" +
-                            "   |   |   \n");
+        printStream.println(boardString);
 
     }
 }

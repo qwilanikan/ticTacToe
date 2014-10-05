@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.io.BufferedReader;
 import java.io.PrintStream;
 
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
 public class BoardTest {
@@ -21,7 +22,7 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldDrawBoardCorrectly(){
+    public void shouldDrawEmptyBoardCorrectly(){
         String boardImage =     "   |   |   \n" +
                                 "-----------\n" +
                                 "   |   |   \n" +
@@ -34,7 +35,14 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldMarkXWherePlayerOneChooses(){
+    public void shouldMarkXInFirstSpotWhen1Chosen(){
+        board.mark(1);
+
+        verify(printStream).println(" X |   |   \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n");
 
     }
 }
