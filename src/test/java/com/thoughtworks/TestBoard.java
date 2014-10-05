@@ -28,25 +28,22 @@ public class TestBoard {
 
     @Test
     public void shouldDrawBoardCorrectly(){
-        String verticalLines = "   |   |   ";
-        String horizontalLine = "---------";
+        String boardImage =     "   |   |   \n" +
+                                "-----------\n" +
+                                "   |   |   \n" +
+                                "-----------\n" +
+                                "   |   |   \n";
 
-        board.drawBoard();
 
-        InOrder inOrder = inOrder(printStream);
+        board.draw();
 
-        inOrder.verify(printStream).println(verticalLines);
-        inOrder.verify(printStream).println(horizontalLine);
-        inOrder.verify(printStream).println(verticalLines);
-        inOrder.verify(printStream).println(horizontalLine);
-        inOrder.verify(printStream).println(verticalLines);
+        verify(printStream).println(boardImage);
+
     }
 
     @Test
     public void shouldMarkXWherePlayerOneChooses() throws IOException {
-        when(bufferedReader.readLine()).thenReturn("2");
-        board.markX();
-        verify(printStream).println("   | X |   ");
+
     }
 }
 

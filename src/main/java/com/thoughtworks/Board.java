@@ -8,11 +8,6 @@ import java.io.PrintStream;
  * Created by qwillduvall on 10/1/14.
  */
 public class Board {
-    String lineOne;
-    String lineTwo;
-    String lineThree;
-    String lineFour;
-    String lineFive;
 
     private final PrintStream printStream;
     private BufferedReader bufferedReader;
@@ -20,49 +15,26 @@ public class Board {
     public Board(PrintStream printStream, BufferedReader bufferedReader){
         this.printStream = printStream;
         this.bufferedReader = bufferedReader;
-        lineOne = "   |   |   ";
-        lineTwo = "---------";
-        lineThree = "   |   |   ";
-        lineFour = "---------";
-        lineFive = "   |   |   ";
+
     }
 
 
-    public void markX() throws IOException {
+    public void mark() throws IOException {
         int xLocation = Integer.parseInt(bufferedReader.readLine());
 
-        String lineToChange = lineOne;
-        if (xLocation > 3){
-            lineToChange = lineThree;
-        }
-        if (xLocation > 6){
-            lineToChange = lineFive;
-        }
 
-        int locationOnLine = xLocation % 3;
-        System.out.println(locationOnLine);
-        if (locationOnLine == 2) {
-            lineToChange = "   | X |   ";
-        }
-        else if(locationOnLine == 1) {
-            lineToChange = " X |   |   ";
-        }
-        else {
-            lineToChange = "   |   | X ";
-        }
 
-        //s = s.replace(s.substring(3,6), "foobar");
-
-        drawBoard();
+        draw();
 
 
     }
 
-    public void drawBoard() {
-        printStream.println(lineOne);
-        printStream.println(lineTwo);
-        printStream.println(lineThree);
-        printStream.println(lineFour);
-        printStream.println(lineFive);
+    public void draw() {
+        printStream.println("   |   |   \n" +
+                            "-----------\n" +
+                            "   |   |   \n" +
+                            "-----------\n" +
+                            "   |   |   \n");
+
     }
 }
