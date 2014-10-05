@@ -10,7 +10,7 @@ import java.io.PrintStream;
 
 import static org.mockito.Mockito.*;
 
-public class TestTicTacToe {
+public class TicTacToeTest {
     PrintStream printStream;
     TicTacToe ticTacToe;
     BufferedReader bufferedReader;
@@ -18,12 +18,12 @@ public class TestTicTacToe {
     @Before
     public void setUp(){
         printStream = mock(PrintStream.class);
-        ticTacToe = new TicTacToe(printStream, bufferedReader);
         bufferedReader = mock(BufferedReader.class);
+        ticTacToe = new TicTacToe(printStream, bufferedReader);
     }
 
     @Test
-    public void shouldPromptPlayerOneForNumber() throws IOException {
+    public void shouldPromptPlayerForNumber() throws IOException {
         ticTacToe.play();
         verify(printStream).println(contains("Enter a number between 1 and 9"));
     }
