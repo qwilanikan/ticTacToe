@@ -18,7 +18,6 @@ public class BoardTest {
     @Before
     public void setUp(){
         printStream = mock(PrintStream.class);
-        bufferedReader = mock(BufferedReader.class);
         board = new Board(printStream, bufferedReader);
     }
 

@@ -10,14 +10,13 @@ public class TicTacToe {
     private Board board;
 
 
-    public TicTacToe(PrintStream printstream, BufferedReader bufferedReader){
-        this.printStream = printstream;
+    public TicTacToe(PrintStream printStream, BufferedReader bufferedReader, Board board) {
+        this.printStream = printStream;
         this.bufferedReader = bufferedReader;
-        board = new Board(printStream, bufferedReader);
+        this.board = board;
     }
 
     public void play() throws IOException {
-
         printStream.println("Enter a number between 1 and 9");
         board.draw();
 

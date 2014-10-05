@@ -14,18 +14,28 @@ public class TicTacToeTest {
     PrintStream printStream;
     TicTacToe ticTacToe;
     BufferedReader bufferedReader;
+    private Board board;
 
     @Before
     public void setUp(){
         printStream = mock(PrintStream.class);
         bufferedReader = mock(BufferedReader.class);
-        ticTacToe = new TicTacToe(printStream, bufferedReader);
+        board = mock(Board.class);
+        ticTacToe = new TicTacToe(printStream, bufferedReader,board);
     }
 
     @Test
     public void shouldPromptPlayerForNumber() throws IOException {
         ticTacToe.play();
         verify(printStream).println(contains("Enter a number between 1 and 9"));
+    }
+
+    @Test
+    public void shouldDrawBoard() throws IOException {
+        ticTacToe.play();
+
+        verify(board).draw();
+
     }
 
 
