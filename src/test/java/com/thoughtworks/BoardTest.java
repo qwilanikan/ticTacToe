@@ -45,5 +45,17 @@ public class BoardTest {
                                     "   |   |   \n");
 
     }
+
+    @Test
+    public void shouldMarkXInMiddleSpotWhen5Chosen(){
+        board.mark(5);
+
+        verify(printStream).println("   |   |   \n" +
+                                    "-----------\n" +
+                                    "   | X |   \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n");
+
+    }
 }
 

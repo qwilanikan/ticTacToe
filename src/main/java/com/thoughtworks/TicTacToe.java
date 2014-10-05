@@ -21,7 +21,6 @@ public class TicTacToe {
     public void play() throws IOException {
         printStream.println("Enter a number between 1 and 9");
         player.move();
-        board.draw();
 
     }
 
