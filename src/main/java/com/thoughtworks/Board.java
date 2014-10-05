@@ -20,8 +20,10 @@ public class Board {
     }
 
 
-    public void mark(int i) {
-        locations.set(i-1, "X");
+    public void mark(int location) {
+        if (location < 10 && location > 0) {
+            locations.set(location - 1, "X");
+        }
         draw();
     }
 

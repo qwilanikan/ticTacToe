@@ -57,5 +57,16 @@ public class BoardTest {
                                     "   |   |   \n");
 
     }
+
+    @Test
+    public void shouldNotMarkBoardWhenChoiceIsNotValid(){
+        board.mark(90);
+
+        verify(printStream).println("   |   |   \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n" +
+                                    "-----------\n" +
+                                    "   |   |   \n");
+    }
 }
 
